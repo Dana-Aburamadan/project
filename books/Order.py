@@ -1,8 +1,18 @@
-from books.Book import Book
-from utils.Utils import Constants
+class order:
+    def __init__(self, id, date, client_id, book_id):
+        self.__id = id
+        self.__date = date
+        self.__client_id = client_id
+        self.__book_id = book_id
 
-list_of_all_books: list[Book] = [
-    Book(1, "The 7 Habits Of Highly Effective People", "motivational" "Stephen Covey", Constants.Active),
-    Book(2, "How To Win Friends And Influence People", "Best seller" "Dale Carnegie", Constants.Inactive),
-    Book(3, "Think And Grow Rich Written", "Most Effective", "Napoleon Hill", Constants.Active),
-    Book(4, "The Greatest Salesman In The World", "Educational", "Og Mandino", Constants.Inactive)]
+    def get_id(self):
+        return self.__id
+
+    def get_date(self):
+        return self.__date
+
+    def get_client_id(self):
+        return self.__client_id
+
+    def get_book_id(self):
+        return self.__book_id
