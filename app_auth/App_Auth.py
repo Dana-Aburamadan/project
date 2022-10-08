@@ -10,9 +10,9 @@ class App_Auth:
      Client(3, "Asil", 18, 7654321, 599845334, "Asil",678)]
 
     Librarian_list: list[Librarian] = [
-     Librarian(4, "Ali", 33, 1234567, Constants.Full_Time,"Ali", 111),
-     Librarian(5, "Abdallah", 32, 5678943, Constants.Full_Time, "Abdallah", 112),
-     Librarian(6, "Adham", 28, 7654321, Constants.Part_Time, "Adham",113)]
+     Librarian(4, "Ali", 33, 1234567,"Ali", 111),
+     Librarian(5, "Abdallah", 32, 5678943, "Abdallah", 112),
+     Librarian(6, "Adham", 28, 7654321, "Adham",113)]
 
 
     def get_last_id_client(self):

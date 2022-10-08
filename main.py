@@ -1,8 +1,10 @@
 from app_auth.App_Auth import App_Auth, Search_controller
+from books.order_Auth import order_auth
 from users.Client import Client
 from utils.Utils import Methods_Utils
 from books.Book import Book
 from books.book_Auth import Book_Auth
+from books.Order import order
 
 def get_input_from_user(app_auth: App_Auth):
     full_name = input("Enter client name: ")
@@ -20,7 +22,7 @@ def get_input_from_user(app_auth: App_Auth):
     app_auth.register_new_Client(clt)
 
 
-print("Welcome,please add your crediual: ")
+print("Welcome,please add your Username and Password: ")
 
 user_name = input("Username: ")
 password = input("Password: ")
@@ -57,23 +59,23 @@ if not Methods_Utils.check_value_is_empty(emp_choice):
               print("Librarian Name: ", search_librarian.get_full_name()
                         , "\nLibrarian age: ", search_librarian.get_age())
 
+App_Auth.Clients_list = []
+App_Auth.Clients_list.append(order)
+
+order_auth.Orders_list = []
+order_auth.Orders_list.append(order)
 
 welcome_msg = '''\n Welcome to the Book’s Library 
         Please choose an option:
         1. Display all the books
         2. Borrow book
-        3. Return book
-        4. Exit 
+        3. Return book 
         '''
 def book_list():
- for item in Book_Auth.list_of_all_books :
+ for item in Book_Auth.list_of_all_books:
     print(item.get_id())
     print(item.get_title())
 
-# def borrowing_book():
-#     for item in App_Auth.list_of_all_books:
-#         if item is Constants.Active:
-#             print(Book.get_title)
 
 print(welcome_msg)
 a = int(input("Enter a choice: "))
@@ -82,14 +84,13 @@ if a == 1:
  print("Books present in this library are: \n 1.The 7 Habits Of Highly Effective People \n 2.How To Win Friends And Influence People \n 3.How To Win Friends And Influence People\n 4.The Greatest Salesman In The World " )
  print(welcome_msg)
  a = int(input("Enter a choice: "))
-
 if a == 1:
  print("Books present in this library are: \n 1.The 7 Habits Of Highly Effective People \n 2.How To Win Friends And Influence People \n 3.How To Win Friends And Influence People\n 4.The Greatest Salesman In The World " )
 
 elif a == 2:
  print('These are the books we have')
  print(book_list())
- b = int(input("Write the id of the book you want to borrow: "))
+ int(input("Write the id of the book you want to borrow: "))
  print("Done!,The book is borrowed now, Return it in 30 days.")
 
 elif a == 3:
